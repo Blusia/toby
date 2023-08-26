@@ -60,6 +60,7 @@ jobs:
         run: |
           pwd
           ls -la
+          cp ./environment/prod/deployment/prod/* /home/ubuntu/test_dir -r
 
 
 
