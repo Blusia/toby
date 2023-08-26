@@ -70,23 +70,23 @@ jobs:
           target: ${{ secrets.TOBY_VPS_LIVE_APP_PATH }}
           rm: true
 
-      - uses: appleboy/ssh-action@v1.0.0
-        with:
-          timeout: 10s
-          command_timeout: 10m
-          host: ${{ secrets.VPS_OVH_659916A6_HOST }}
-          port: ${{ secrets.VPS_OVH_659916A6_PORT }}
-          username: ${{ secrets.VPS_OVH_659916A6_USERNAME }}
-          key: ${{ secrets.VPS_OVH_659916A6_PRIVATE_KEY }}
-         #passphrase: ${{ secrets.VPS_OVH_659916A6_PRIVATE_KEY_PASSPHRASE }}
-          script_stop: true
-          script: |
-              cd ${{ secrets.TOBY_VPS_LIVE_APP_PATH }}
-              cp .env.example .env
-              make init
-              make shell
-                  #inside container
-              npm run dev
+      # - uses: appleboy/ssh-action@v1.0.0
+      #   with:
+      #     timeout: 10s
+      #     command_timeout: 10m
+      #     host: ${{ secrets.VPS_OVH_659916A6_HOST }}
+      #     port: ${{ secrets.VPS_OVH_659916A6_PORT }}
+      #     username: ${{ secrets.VPS_OVH_659916A6_USERNAME }}
+      #     key: ${{ secrets.VPS_OVH_659916A6_PRIVATE_KEY }}
+      #    #passphrase: ${{ secrets.VPS_OVH_659916A6_PRIVATE_KEY_PASSPHRASE }}
+      #     script_stop: true
+      #     script: |
+      #         cd ${{ secrets.TOBY_VPS_LIVE_APP_PATH }}
+      #         cp .env.example .env
+      #         make init
+      #         make shell
+      #             #inside container
+      #         npm run dev
       #       cd ${{ secrets.TOBY_VPS_LIVE_APP_PATH }}/environment/prod/deployment/prod
       #       make prod-deploy PROD_ENV_KEY=${{ secrets.PROD_ENV_KEY }}
       #       docker images --filter dangling=true | grep "ghcr.io/blumilksoftware/${{ env.REPO_NAME }}" | awk '{print $3}'| xargs --no-run-if-empty docker rmi
