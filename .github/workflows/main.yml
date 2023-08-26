@@ -63,19 +63,19 @@ jobs:
 
 
 
-      # - name: copy files via ssh
-      #   uses: appleboy/scp-action@v0.1.4
-      #   with:
-      #     timeout: 10s
-      #     command_timeout: 10m
-      #     host: ${{ secrets.VPS_OVH_659916A6_HOST }}
-      #     port: ${{ secrets.VPS_OVH_659916A6_PORT }}
-      #     username: ${{ secrets.VPS_OVH_659916A6_USERNAME }}
-      #     key: ${{ secrets.VPS_OVH_659916A6_PRIVATE_KEY }}
-      #     #passphrase: ${{ secrets.VPS_OVH_659916A6_PRIVATE_KEY_PASSPHRASE }}
-      #     source: "./environment/prod/deployment/prod/*,./environment/prod/deployment/scripts/*"
-      #     target: ${{ secrets.TOBY_VPS_LIVE_APP_PATH }}
-      #     rm: true
+      - name: copy files via ssh
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          timeout: 10s
+          command_timeout: 10m
+          host: ${{ secrets.VPS_OVH_659916A6_HOST }}
+          port: ${{ secrets.VPS_OVH_659916A6_PORT }}
+          username: ${{ secrets.VPS_OVH_659916A6_USERNAME }}
+          key: ${{ secrets.VPS_OVH_659916A6_PRIVATE_KEY }}
+          #passphrase: ${{ secrets.VPS_OVH_659916A6_PRIVATE_KEY_PASSPHRASE }}
+          source: "./environment/prod/deployment/prod/*,./environment/prod/deployment/scripts/*"
+          target: "/home/ubuntu/test_files"
+          rm: true
 
       # - uses: appleboy/ssh-action@v1.0.0
       #   with:
