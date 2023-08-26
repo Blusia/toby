@@ -68,7 +68,7 @@ jobs:
           #passphrase: ${{ secrets.VPS_OVH_659916A6_PRIVATE_KEY_PASSPHRASE }}
           source: "./environment/prod/deployment/prod/*,./environment/prod/deployment/scripts/*"
           target: ${{ secrets.TOBY_VPS_LIVE_APP_PATH }}
-          rm: true
+          rm: false
 
       # - uses: appleboy/ssh-action@v1.0.0
       #   with:
