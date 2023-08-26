@@ -55,11 +55,11 @@ jobs:
           # cache-from: type=gha, ref=ghcr.io/${{ github.repository_owner }}/${{ env.REPO_NAME }}-prod-build-cache
           # cache-to: type=gha, ref=ghcr.io/${{ github.repository_owner }}/${{ env.REPO_NAME }}-prod-build-cache, mode=max
         
-      - name: Test
-        run: |
-          pwd
-          ls -la
-          cp ./environment/prod/deployment/prod/* /home/ubuntu/test_dir -r
+      # - name: Test
+      #   run: |
+      #     pwd
+      #     ls -la
+      #     cp ./environment/prod/deployment/prod/* /home/ubuntu/test_dir -r
 
 
 
@@ -75,7 +75,7 @@ jobs:
           #passphrase: ${{ secrets.VPS_OVH_659916A6_PRIVATE_KEY_PASSPHRASE }}
           source: "./environment/prod/deployment/prod/*,./environment/prod/deployment/scripts/*"
           target: "/home/ubuntu/test_files"
-          rm: true
+          rm: false
 
       # - uses: appleboy/ssh-action@v1.0.0
       #   with:
