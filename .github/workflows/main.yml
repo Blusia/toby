@@ -4,9 +4,8 @@ name: Deploy to production by release
 #   group: deploy-prod
 #   cancel-in-progress: false
 
-on:
-  release:
-    types: [published]
+on: [push]
+
 
 jobs:
   deploy:
