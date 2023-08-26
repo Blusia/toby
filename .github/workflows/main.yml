@@ -83,7 +83,7 @@ jobs:
           script: |
               cd ${{ secrets.TOBY_VPS_LIVE_APP_PATH }}
               pwd
-              ls -la
+              ls -la ${{ github.workspace }}
               cp .env.example .env
               make init
               make shell
