@@ -32,7 +32,7 @@ services:
       - ${DOCKER_APP_HOST_PORT:-8181}:80
     networks:
       - toby-dev
-      - traefik-proxy-blumilk-local
+      # - traefik-proxy-blumilk-local
     restart: unless-stopped
     depends_on:
       database:
@@ -98,7 +98,7 @@ services:
       - ${DOCKER_MAILPIT_DASHBOARD_HOST_PORT:-8025}:8025
     networks:
       - toby-dev
-      - traefik-proxy-blumilk-local
+      # - traefik-proxy-blumilk-local
     restart: unless-stopped
 
   selenium:
@@ -113,8 +113,8 @@ services:
 networks:
   toby-dev:
     driver: bridge
-  traefik-proxy-blumilk-local:
-    external: true
+  # traefik-proxy-blumilk-local:
+    # external: true
 
 volumes:
   toby-pgsql-data:
