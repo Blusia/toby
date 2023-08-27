@@ -82,7 +82,7 @@ jobs:
           script_stop: true
           script: |
        
-              cd ${{ secrets.TOBY_VPS_LIVE_APP_PATH }}
+              # cd ${{ secrets.TOBY_VPS_LIVE_APP_PATH }}
               cp .env.example .env
               make init
               make shell
