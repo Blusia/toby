@@ -83,14 +83,11 @@ jobs:
           script: |
        
               cd ${{ secrets.TOBY_VPS_LIVE_APP_PATH }}
-              mkdir katalog2
-              pwd
-              ls -la
-        # cp .env.example .env
-        #       make init
-        #       make shell
-        #           #inside container
-        #       npm run dev
+              cp .env.example .env
+              make init
+              make shell
+                  #inside container
+              npm run dev
       #       cd ${{ secrets.TOBY_VPS_LIVE_APP_PATH }}/environment/prod/deployment/prod
       #       make prod-deploy PROD_ENV_KEY=${{ secrets.PROD_ENV_KEY }}
       #       docker images --filter dangling=true | grep "ghcr.io/blumilksoftware/${{ env.REPO_NAME }}" | awk '{print $3}'| xargs --no-run-if-empty docker rmi
