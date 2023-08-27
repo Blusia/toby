@@ -81,12 +81,9 @@ jobs:
          #passphrase: ${{ secrets.VPS_OVH_659916A6_PRIVATE_KEY_PASSPHRASE }}
           script_stop: true
           script: |
-       
-              # cd ${{ secrets.TOBY_VPS_LIVE_APP_PATH }}
               cp .env.example .env
               make init
               make shell
-                  #inside container
               npm run dev
       #       cd ${{ secrets.TOBY_VPS_LIVE_APP_PATH }}/environment/prod/deployment/prod
       #       make prod-deploy PROD_ENV_KEY=${{ secrets.PROD_ENV_KEY }}
