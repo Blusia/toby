@@ -85,7 +85,7 @@ jobs:
               cd ${{ secrets.TOBY_VPS_LIVE_APP_PATH }}
               mkdir katalog2
               pwd
-              ls -la 
+              ls -la
         # cp .env.example .env
         #       make init
         #       make shell
