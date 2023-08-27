@@ -83,8 +83,8 @@ jobs:
           script: |
               cd ${{ secrets.TOBY_VPS_LIVE_APP_PATH }}
               cp .env.example .env
-              make init
-              make shell
+              sudo make init
+              sudo make shell
               npm run dev
       #       cd ${{ secrets.TOBY_VPS_LIVE_APP_PATH }}/environment/prod/deployment/prod
       #       make prod-deploy PROD_ENV_KEY=${{ secrets.PROD_ENV_KEY }}
